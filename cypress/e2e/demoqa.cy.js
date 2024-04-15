@@ -38,8 +38,8 @@ describe("Cypress testing Final Task", () => {
                 ).click();
             });
 
-            AutomationPracticeFormPage.subjectsInputField.type("Economics").then(() => {
-                AutomationPracticeFormPage.subjectAutoCompleteField.contains("Economics").click();
+            AutomationPracticeFormPage.subjectsInputField.type(person.subject).then(() => {
+                AutomationPracticeFormPage.subjectAutoCompleteField.contains(person.subject).click();
             });
 
             AutomationPracticeFormPage.hobbyInputField(person.hobbies).click();
