@@ -44,7 +44,7 @@ describe("Cypress testing Final Task", () => {
 
             AutomationPracticeFormPage.hobbyInputField(person.hobbies).click();
             AutomationPracticeFormPage.uploadFileInput.selectFile(
-                "./cypress/files/image.jpg" /*Cerams jums šis file path ies (Ja jus klonesiet projektu), itkā vajadzētu iet.*/
+                `./cypress/files/${person.picture}` /*Cerams jums šis file path ies (Ja jus klonesiet projektu), itkā vajadzētu iet.*/
             );
             AutomationPracticeFormPage.currentAddressInputField.type(person.currentAddress);
 
