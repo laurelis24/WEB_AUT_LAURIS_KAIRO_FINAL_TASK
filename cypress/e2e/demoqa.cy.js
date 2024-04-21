@@ -16,7 +16,7 @@ describe("Cypress testing Final Task", () => {
                 subject: "Economics",
                 hobbies: "Music",
                 picture: "image.jpg",
-                dateOfBirth: { year: 1930, month: "February", mIdx: 1, day: 28 },
+                dateOfBirth: { year: 1930, month: "February", day: 28 },
                 currentAddress: "Cypress street 123",
                 state: "NCR",
                 city: "Delhi",
@@ -32,7 +32,6 @@ describe("Cypress testing Final Task", () => {
             AutomationPracticeFormPage.monthSelectField.select(person.dateOfBirth.month).then(() => {
                 AutomationPracticeFormPage.daySelectField(
                     person.dateOfBirth.year,
-                    person.dateOfBirth.mIdx,
                     person.dateOfBirth.day,
                     person.dateOfBirth.month
                 ).click();

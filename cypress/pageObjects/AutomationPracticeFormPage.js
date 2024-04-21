@@ -1,5 +1,5 @@
 import { BasePage } from "./BasePage";
-import { getDayTitle } from "../help_function/getDay";
+import { getDayTitle, getMonthIdx } from "../help_function/date";
 
 export class AutomationPracticeFormPage extends BasePage {
     static get url() {
@@ -17,7 +17,7 @@ export class AutomationPracticeFormPage extends BasePage {
     }
 
     static genderInputField(gender) {
-        let val = gender === "Male" ? 1 : gender === "Female" ? 2 : 3;
+        let val = gender === "Other" ? 3 : gender === "Female" ? 2 : 1;
         return cy.get(`label[for="gender-radio-${val}"]`);
     }
 
@@ -37,7 +37,8 @@ export class AutomationPracticeFormPage extends BasePage {
         return cy.get("select.react-datepicker__year-select");
     }
 
-    static daySelectField(year, mIdx, day, month) {
+    static daySelectField(year, day, month) {
+        let mIdx = getMonthIdx(month);
         const mValue = mIdx <= 9 ? "0" + (mIdx + 1) : mIdx + 1;
         const endStr = day === 1 ? "st" : day === 2 ? "nd" : day === 3 ? "rd" : "th";
         const date = new Date(`${year}/${mValue}/${day}`);
